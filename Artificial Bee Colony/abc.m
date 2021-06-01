@@ -25,15 +25,15 @@ CostFunction = @(x, y) in_function(x, y);    % Cost Function
 
 nVar = 5;             % Number of Decision Variables
 
-[ReferencePoints, Solution] = rand_points(100, nVar);
+[ReferencePoints, Solution] = rand_points(nVar);
 Solution
 
 VarSize = gpuArray([1 nVar]);   % Decision Variables Matrix Size
 
 % VarMin = -10;         % Decision Variables Lower Bound
-VarMin = 0;         % Decision Variables Lower Bound
+VarMin = -1;         % Decision Variables Lower Bound
 % VarMax = 10;         % Decision Variables Upper Bound
-VarMax = 100;         % Decision Variables Upper Bound
+VarMax = 1;         % Decision Variables Upper Bound
 
 %% ABC Settings
 
@@ -188,7 +188,7 @@ figure;
 %plot(gather(ReferencePoints, '.'))
 hold all;
 plot(ReferencePoints(:, 1), ReferencePoints(:, 2), '.');
-plot(polyval(BestSol.Position, [VarMin:VarMax]));
+plot(polyval(BestSol.Position, [VarMin:0.01:VarMax]));
 %semilogy(BestCost, 'LineWidth', 2);
 xlabel('X');
 ylabel('Y');

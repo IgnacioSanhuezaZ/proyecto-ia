@@ -7,7 +7,7 @@ function [out] = in_function(parameters, points)
         if val == 0 && points(i, 2) ~= 0
             val = 100000000;
         end
-        arr(i) = abs(val - points(i, 2)); 
+        arr(i) = mse(val - points(i, 2)); 
     end
     out = mean(arr);
 end
