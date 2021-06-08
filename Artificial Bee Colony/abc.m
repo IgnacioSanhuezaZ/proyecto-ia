@@ -7,6 +7,7 @@
 % Publisher: Yarpiz (www.yarpiz.com)
 % 
 % Developer: Mostapha Kalami Heris (Member of Yarpiz Team)
+% Modified by: Ignacio Sanhueza Z.
 % 
 % Cite as:
 % Mostapha Kalami Heris, Artificial Bee Colony in MATLAB (URL: https://yarpiz.com/297/ypea114-artificial-bee-colony), Yarpiz, 2015.
@@ -186,8 +187,8 @@ polynom = BestSol.Position;
 figure;
 %plot(BestCost, 'LineWidth', 2);
 %plot(gather(ReferencePoints, '.'))
-hold all;
-plot(ReferencePoints(:, 1), ReferencePoints(:, 2), '.');
+%hold all;
+%plot(ReferencePoints(:, 1), ReferencePoints(:, 2), '.');
 plot(polyval(BestSol.Position, [VarMin:0.01:VarMax]));
 %semilogy(BestCost, 'LineWidth', 2);
 xlabel('X');
