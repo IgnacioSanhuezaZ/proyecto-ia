@@ -26,7 +26,7 @@ CostFunction = @(x, y) in_function(x, y);    % Cost Function
 
 nVar = 5;             % Number of Decision Variables
 
-[ReferencePoints, Solution] = rand_points(nVar);
+[ReferencePoints, Solution] = rand_points(nVar); % parametros por defecto
 Solution
 
 VarSize = gpuArray([1 nVar]);   % Decision Variables Matrix Size
